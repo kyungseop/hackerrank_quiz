@@ -12,9 +12,19 @@ public abstract class Quiz {
     }
 
     protected static void printArray(String type, int[] array) {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < array.length; i++) {
-            System.out.println(type + " " + array[i]);
+            if (i == 0) {
+                sb.append("[ ");
+            }
+            sb.append(array[i]);
+            if (i == array.length - 1) {
+                sb.append(" ]");
+            } else {
+                sb.append(",");
+            }
         }
+        System.out.println(type + " " + sb.toString());
     }
 
 }
